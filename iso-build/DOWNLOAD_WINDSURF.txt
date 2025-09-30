@@ -1,0 +1,20 @@
+⚠️ NOTA IMPORTANTE: Download do Windsurf
+
+O instalador do Windsurf precisa ser baixado manualmente do site oficial:
+
+URL: https://windsurf.com/download
+
+Passos:
+1. Acesse https://windsurf.com/download no navegador
+2. Clique em "Download for Windows"
+3. Salve o arquivo WindsurfSetup-x64.exe
+4. Mova para: /home/luiz/CascadeProjects/ventoy-ai-experiment/iso-build/WindsurfSetup-x64.exe
+5. Execute novamente: ./BUILD_ISO.sh
+
+Alternativa (caso o download funcione durante instalação):
+- A ISO será criada sem o instalador Windsurf incluído
+- O script setup-ai-stack.ps1 tentará baixar automaticamente durante a instalação
+- Requer conexão com internet durante primeira inicialização
+
+IMPORTANTE: Sem o instalador incluído na ISO, a primeira inicialização levará 
+mais tempo devido ao download (150MB aproximadamente).

@@ -54,13 +54,6 @@ wget https://huggingface.co/TheBloke/phi-2-GGUF/resolve/main/phi-2.Q4_0.gguf \
 ls -lh /media/luiz/VENTOY_AI/models/
 ```
 
-### 3. Testar em VM (Antes de Boot Real)
-
-```bash
-# Testar boot com QEMU (seguro)
-qemu-system-x86_64 -enable-kvm -m 2048 -boot d \
-  -drive file=/dev/sdb,format=raw,if=virtio \
-  -vga std -display gtk
 ```
 
 ### 4. Configurar BIOS para Boot

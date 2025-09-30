@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "jupyter": {
+      "command": "uvx",
+      "args": ["jupyter-mcp-server"]
+    },
+    "arxiv": {
+      "command": "npx",
+      "args": ["-y", "arxiv-mcp-server"]
+    },
+    "kaggle": {
+      "command": "npx",
+      "args": ["-y", "kaggle-mcp-server"]
+    },
+    "networkx": {
+      "command": "uvx",
+      "args": ["networkx-mcp-server"]
+    }
+  }
+}
