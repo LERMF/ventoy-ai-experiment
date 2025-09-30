@@ -50,6 +50,8 @@ mkdir -p "$BUILD_DIR/\$OEM\$/\$1/Setup/windsurf-settings"
 echo "📋 Copiando scripts e configurações..."
 cp -f "$WORK_DIR/configure-wifi.ps1" "$BUILD_DIR/\$OEM\$/\$1/Setup/"
 cp -f "$WORK_DIR/setup-ai-stack-ULTIMATE.ps1" "$BUILD_DIR/\$OEM\$/\$1/Setup/"
+cp -f "$WORK_DIR/AI-System-Menu.ps1" "$BUILD_DIR/\$OEM\$/\$1/Setup/"
+cp -f "$WORK_DIR/POST_INSTALL_VALIDATOR.ps1" "$BUILD_DIR/\$OEM\$/\$1/Setup/"
 cp -rf "$WORK_DIR/windsurf-settings"/* "$BUILD_DIR/\$OEM\$/\$1/Setup/windsurf-settings/"
 
 # 8. Copiar instalador Windsurf (se disponível)

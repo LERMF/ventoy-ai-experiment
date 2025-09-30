@@ -425,9 +425,9 @@ Write-Host "Commands: ws (Windsurf) | ai (chat) | code (aider) | pdf | obs" -For
 }
 
 # ============================================
-# 19. CREATE DESKTOP SHORTCUTS
+# 19. CREATE DESKTOP SHORTCUTS & MENU
 # ============================================
-Write-Step "🔗 Creating desktop shortcuts..."
+Write-Step "🔗 Creating desktop shortcuts and Control Center..."
 try {
     $WshShell = New-Object -ComObject WScript.Shell
     $Desktop = [System.Environment]::GetFolderPath('Desktop')
@@ -439,13 +439,28 @@ try {
         $Shortcut.Save()
     }
     
-    # AI Terminal shortcut
-    $Shortcut = $WshShell.CreateShortcut("$Desktop\AI Terminal.lnk")
-    $Shortcut.TargetPath = "powershell.exe"
-    $Shortcut.Arguments = "-NoExit -Command `"Write-Host 'AI Terminal Ready' -ForegroundColor Green`""
-    $Shortcut.Save()
+    # AI Control Center shortcut
+    if (Test-Path "C:\Setup\AI-System-Menu.ps1") {
+        $Shortcut = $WshShell.CreateShortcut("$Desktop\AI Control Center.lnk")
+        $Shortcut.TargetPath = "powershell.exe"
+        $Shortcut.Arguments = "-ExecutionPolicy Bypass -File `"C:\Setup\AI-System-Menu.ps1`""
+        $Shortcut.WorkingDirectory = "C:\Setup"
+        $Shortcut.Save()
+        
+        # Copy menu to user profile
+        Copy-Item -Path "C:\Setup\AI-System-Menu.ps1" -Destination "C:\Users\$env:USERNAME\Documents\AI-System-Menu.ps1" -Force
+    }
     
-    Write-Success "Desktop shortcuts created"
+    # Validator shortcut
+    if (Test-Path "C:\Setup\POST_INSTALL_VALIDATOR.ps1") {
+        $Shortcut = $WshShell.CreateShortcut("$Desktop\Validate AI System.lnk")
+        $Shortcut.TargetPath = "powershell.exe"
+        $Shortcut.Arguments = "-ExecutionPolicy Bypass -File `"C:\Setup\POST_INSTALL_VALIDATOR.ps1`""
+        $Shortcut.WorkingDirectory = "C:\Setup"
+        $Shortcut.Save()
+    }
+    
+    Write-Success "Desktop shortcuts and Control Center created"
 } catch {
     Write-Error-Log "Shortcut creation failed: $_"
 }
