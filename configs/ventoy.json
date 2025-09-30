@@ -1,0 +1,63 @@
+{
+  "control": [
+    {
+      "VTOY_DEFAULT_SEARCH_ROOT": "/ventoy/",
+      "VTOY_FILE_FLT_ISO": "1",
+      "VTOY_FILE_FLT_WIM": "1",
+      "VTOY_FILE_FLT_EFI": "1",
+      "VTOY_FILE_FLT_IMG": "1",
+      "VTOY_FILE_FLT_VHD": "1",
+      "VTOY_FILE_FLT_VTOY": "1",
+      "VTOY_DEFAULT_MENU_MODE": "1",
+      "VTOY_MENU_TIMEOUT": "30",
+      "VTOY_DEFAULT_KBD_LAYOUT": "us"
+    }
+  ],
+  "theme": {
+    "display_mode": "GUI",
+    "gfxmode": "1024x768",
+    "ventoy_left": "10%",
+    "ventoy_top": "10%",
+    "ventoy_color": "#0080ff",
+    "fonts": [
+      "/ventoy/unicode.pf2"
+    ]
+  },
+  "menu_alias": [
+    {
+      "image": "/ISO/*.iso",
+      "alias": "Windows/Linux ISOs"
+    }
+  ],
+  "menu_tip": {
+    "left": "10%",
+    "top": "90%",
+    "color": "#ffff00",
+    "tips": [
+      {
+        "image": "*.iso",
+        "tip": "Bootable ISO - Press ENTER to boot"
+      }
+    ]
+  },
+  "persistence": [
+    {
+      "image": "/ISO/debian*.iso",
+      "backend": "/persistence/debian-persistence.dat",
+      "autosel": 1,
+      "timeout": 5
+    }
+  ],
+  "auto_install": [
+    {
+      "image": "/ISO/windows*.iso",
+      "template": "/ventoy/autoinstall/windows_auto.xml"
+    }
+  ],
+  "dud": [
+    {
+      "image": "/ISO/*.iso",
+      "dud": ["/drivers/*.rpm", "/drivers/*.deb"]
+    }
+  ]
+}
