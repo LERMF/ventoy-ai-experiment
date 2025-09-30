@@ -5,8 +5,8 @@ echo "🔧 ISO Builder - Tiny11 + Windsurf + AI Stack"
 echo "=============================================="
 
 WORK_DIR="/home/luiz/CascadeProjects/ventoy-ai-experiment/iso-build"
-ISO_ORIGINAL="/home/luiz/tiny11-original.iso"
-ISO_OUTPUT="/home/luiz/CascadeProjects/ventoy-ai-experiment/iso-build/tiny11-ai-automated.iso"
+ISO_ORIGINAL="/home/luiz/nano11-24h2-copilot.iso"
+ISO_OUTPUT="/home/luiz/CascadeProjects/ventoy-ai-experiment/iso-build/nano11-ai-ultimate.iso"
 MOUNT_DIR="$WORK_DIR/mnt"
 BUILD_DIR="$WORK_DIR/iso-content"
 
@@ -49,7 +49,7 @@ mkdir -p "$BUILD_DIR/\$OEM\$/\$1/Setup/windsurf-settings"
 # 7. Copiar scripts
 echo "📋 Copiando scripts e configurações..."
 cp -f "$WORK_DIR/configure-wifi.ps1" "$BUILD_DIR/\$OEM\$/\$1/Setup/"
-cp -f "$WORK_DIR/setup-ai-stack.ps1" "$BUILD_DIR/\$OEM\$/\$1/Setup/"
+cp -f "$WORK_DIR/setup-ai-stack-ULTIMATE.ps1" "$BUILD_DIR/\$OEM\$/\$1/Setup/"
 cp -rf "$WORK_DIR/windsurf-settings"/* "$BUILD_DIR/\$OEM\$/\$1/Setup/windsurf-settings/"
 
 # 8. Copiar instalador Windsurf (se disponível)

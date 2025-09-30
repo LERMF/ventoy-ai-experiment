@@ -121,8 +121,8 @@
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
                     <Order>2</Order>
-                    <CommandLine>powershell -ExecutionPolicy Bypass -File C:\Setup\setup-ai-stack.ps1</CommandLine>
-                    <Description>Setup AI Stack and Windsurf</Description>
+                    <CommandLine>powershell -ExecutionPolicy Bypass -File C:\Setup\setup-ai-stack-ULTIMATE.ps1</CommandLine>
+                    <Description>Setup ULTIMATE AI Stack 360</Description>
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
                     <Order>3</Order>
